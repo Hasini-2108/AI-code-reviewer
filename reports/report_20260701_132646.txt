@@ -1,0 +1,302 @@
+AI CODE REVIEW REPORT
+
+Date: 01-07-2026 13:26:46
+Flake8 Issues: 76
+Complexity Grade: F
+
+Original Code
+import math
+
+class Student:
+
+    def __init__(self,name,marks):
+        self.name=name
+        self.marks=marks
+
+    def average(self):
+        return sum(self.marks)/len(self.marks)
+
+    def grade(self):
+
+        avg=self.average()
+
+        if avg>=90:
+            return "A"
+
+        elif avg>=75:
+            return "B"
+
+        elif avg>=60:
+            return "C"
+
+        else:
+            return "D"
+
+
+def factorial(n):
+
+    if n==0:
+        return 1
+
+    result=1
+
+    for i in range(1,n+1):
+        result*=i
+
+    return result
+
+
+def prime(number):
+
+    if number<2:
+        return False
+
+    for i in range(2,int(math.sqrt(number))+1):
+
+        if number%i==0:
+            return False
+
+    return True
+
+
+students=[
+
+    Student("Alice",[90,95,88]),
+
+    Student("Bob",[75,60,82]),
+
+    Student("Charlie",[45,50,55])
+
+]
+
+for student in students:
+
+    print(student.name)
+
+    print("Average:",student.average())
+
+    print("Grade:",student.grade())
+
+    print()
+
+numbers=[5,7,11,20,23]
+
+for n in numbers:
+
+    print("Factorial of",n,"=",factorial(n))
+
+    print("Prime:",prime(n))
+
+    print()
+
+try:
+
+    file=open("demo.txt","r")
+
+    print(file.read())
+
+    file.close()
+
+except FileNotFoundError:
+
+    print("File not found")
+
+Formatted Code
+import math
+
+
+class Student:
+
+    def __init__(self, name, marks):
+
+        self.name = name
+
+        self.marks = marks
+
+    def average(self):
+
+        return sum(self.marks) / len(self.marks)
+
+    def grade(self):
+
+        avg = self.average()
+
+        if avg >= 90:
+
+            return "A"
+
+        elif avg >= 75:
+
+            return "B"
+
+        elif avg >= 60:
+
+            return "C"
+
+        else:
+
+            return "D"
+
+
+def factorial(n):
+
+    if n == 0:
+
+        return 1
+
+    result = 1
+
+    for i in range(1, n + 1):
+
+        result *= i
+
+    return result
+
+
+def prime(number):
+
+    if number < 2:
+
+        return False
+
+    for i in range(2, int(math.sqrt(number)) + 1):
+
+        if number % i == 0:
+
+            return False
+
+    return True
+
+
+students = [
+    Student("Alice", [90, 95, 88]),
+    Student("Bob", [75, 60, 82]),
+    Student("Charlie", [45, 50, 55]),
+]
+
+
+for student in students:
+
+    print(student.name)
+
+    print("Average:", student.average())
+
+    print("Grade:", student.grade())
+
+    print()
+
+
+numbers = [5, 7, 11, 20, 23]
+
+
+for n in numbers:
+
+    print("Factorial of", n, "=", factorial(n))
+
+    print("Prime:", prime(n))
+
+    print()
+
+
+try:
+
+    file = open("demo.txt", "r")
+
+    print(file.read())
+
+    file.close()
+
+
+except FileNotFoundError:
+
+    print("File not found")
+
+
+Flake8 Output
+temp\temp_code.py:5:1: E303 too many blank lines (3)
+temp\temp_code.py:9:5: E303 too many blank lines (3)
+temp\temp_code.py:9:22: E231 missing whitespace after ','
+temp\temp_code.py:9:27: E231 missing whitespace after ','
+temp\temp_code.py:11:18: E225 missing whitespace around operator
+temp\temp_code.py:13:19: E225 missing whitespace around operator
+temp\temp_code.py:17:5: E303 too many blank lines (3)
+temp\temp_code.py:23:5: E303 too many blank lines (3)
+temp\temp_code.py:27:9: E303 too many blank lines (3)
+temp\temp_code.py:27:12: E225 missing whitespace around operator
+temp\temp_code.py:31:9: E303 too many blank lines (3)
+temp\temp_code.py:31:15: E225 missing whitespace around operator
+temp\temp_code.py:37:9: E303 too many blank lines (3)
+temp\temp_code.py:37:17: E225 missing whitespace around operator
+temp\temp_code.py:43:9: E303 too many blank lines (3)
+temp\temp_code.py:43:17: E225 missing whitespace around operator
+temp\temp_code.py:49:9: E303 too many blank lines (3)
+temp\temp_code.py:57:1: E303 too many blank lines (5)
+temp\temp_code.py:61:5: E303 too many blank lines (3)
+temp\temp_code.py:61:9: E225 missing whitespace around operator
+temp\temp_code.py:67:5: E303 too many blank lines (3)
+temp\temp_code.py:67:11: E225 missing whitespace around operator
+temp\temp_code.py:71:5: E303 too many blank lines (3)
+temp\temp_code.py:71:21: E231 missing whitespace after ','
+temp\temp_code.py:73:15: E225 missing whitespace around operator
+temp\temp_code.py:77:5: E303 too many blank lines (3)
+temp\temp_code.py:83:1: E303 too many blank lines (5)
+temp\temp_code.py:87:5: E303 too many blank lines (3)
+temp\temp_code.py:87:14: E225 missing whitespace around operator
+temp\temp_code.py:93:5: E303 too many blank lines (3)
+temp\temp_code.py:93:21: E231 missing whitespace after ','
+temp\temp_code.py:97:9: E303 too many blank lines (3)
+temp\temp_code.py:97:18: E228 missing whitespace around modulo operator
+temp\temp_code.py:97:20: E225 missing whitespace around operator
+temp\temp_code.py:103:5: E303 too many blank lines (3)
+temp\temp_code.py:109:1: E303 too many blank lines (5)
+temp\temp_code.py:109:9: E225 missing whitespace around operator
+temp\temp_code.py:113:20: E231 missing whitespace after ','
+temp\temp_code.py:113:24: E231 missing whitespace after ','
+temp\temp_code.py:113:27: E231 missing whitespace after ','
+temp\temp_code.py:117:18: E231 missing whitespace after ','
+temp\temp_code.py:117:22: E231 missing whitespace after ','
+temp\temp_code.py:117:25: E231 missing whitespace after ','
+temp\temp_code.py:121:22: E231 missing whitespace after ','
+temp\temp_code.py:121:26: E231 missing whitespace after ','
+temp\temp_code.py:121:29: E231 missing whitespace after ','
+temp\temp_code.py:129:1: E303 too many blank lines (3)
+temp\temp_code.py:133:5: E303 too many blank lines (3)
+temp\temp_code.py:137:5: E303 too many blank lines (3)
+temp\temp_code.py:137:21: E231 missing whitespace after ','
+temp\temp_code.py:141:5: E303 too many blank lines (3)
+temp\temp_code.py:141:19: E231 missing whitespace after ','
+temp\temp_code.py:145:5: E303 too many blank lines (3)
+temp\temp_code.py:149:1: E303 too many blank lines (3)
+temp\temp_code.py:149:8: E225 missing whitespace around operator
+temp\temp_code.py:149:11: E231 missing whitespace after ','
+temp\temp_code.py:149:13: E231 missing whitespace after ','
+temp\temp_code.py:149:16: E231 missing whitespace after ','
+temp\temp_code.py:149:19: E231 missing whitespace after ','
+temp\temp_code.py:153:1: E303 too many blank lines (3)
+temp\temp_code.py:157:5: E303 too many blank lines (3)
+temp\temp_code.py:157:25: E231 missing whitespace after ','
+temp\temp_code.py:157:27: E231 missing whitespace after ','
+temp\temp_code.py:157:31: E231 missing whitespace after ','
+temp\temp_code.py:161:5: E303 too many blank lines (3)
+temp\temp_code.py:161:19: E231 missing whitespace after ','
+temp\temp_code.py:165:5: E303 too many blank lines (3)
+temp\temp_code.py:169:1: E303 too many blank lines (3)
+temp\temp_code.py:173:5: E303 too many blank lines (3)
+temp\temp_code.py:173:9: E225 missing whitespace around operator
+temp\temp_code.py:173:25: E231 missing whitespace after ','
+temp\temp_code.py:177:5: E303 too many blank lines (3)
+temp\temp_code.py:181:5: E303 too many blank lines (3)
+temp\temp_code.py:185:1: E303 too many blank lines (3)
+temp\temp_code.py:189:5: E303 too many blank lines (3)
+temp\temp_code.py:189:28: W292 no newline at end of file
+
+
+Radon Output
+temp\temp_code.py
+    F 52:0 prime - A
+    M 16:4 Student.grade - A
+    F 37:0 factorial - A
+    C 4:0 Student - A
+    M 6:4 Student.__init__ - A
+    M 12:4 Student.average - A
+
