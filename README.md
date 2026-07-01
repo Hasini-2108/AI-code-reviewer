@@ -1,4 +1,4 @@
-# AI-code-reviewer
+# AI-code-reviewer mini project
 # 🤖 AI Code Reviewer
 
 A simple web application built using **Python** and **Streamlit** that analyzes Python code for style issues, formats the code, and measures code complexity.
